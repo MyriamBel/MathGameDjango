@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare numbers</title>
+    <script type="text/javascript">
+        function messagenumbers() {
+        alert('{{answern}}')
+        }
+        function messageactions(){
+        alert('{{answera}}')
+        }
+        function btnclck() {
+        document.location.href='{{url}}'
+        }
+    </script>
+</head>
+<body>
+<h3>Please, select answer</h3>
+<div>
+<table>
+    <tr>
+        <td>
+            <h5>Level 1</h5>
+        </td>
+        <td>
+            <h5>Level 2</h5>
+        </td>
+        <td>
+            <h5>Level 3</h5>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p> {{first}} or {{second}} ?</p>
+            <p><a href = {{url}} onclick="messagenumbers()">First</a></p>
+            <p><a href = {{url}} onclick="messagenumbers()">Equal</a></p>
+            <p><a href = {{url}} onclick="messagenumbers()">Second</a></p>
+        </td>
+        <td>
+            <p>{{f_res}} or {{s_res}} ?</p>
+            <p><a href = {{url}} onclick="messageactions()">First</a></p>
+            <p><a href = {{url}} onclick="messageactions()">Equal</a></p>
+            <p><a href = {{url}} onclick="messageactions()">Second</a></p>
+        </td>
+        <td>
+            <form onclick="btnclck()">
+                <img src={% static fullname %} alt="compare"><br />
+                <input id="btn1" type="button" value="Первая" onclick="messagenumbers()">
+                <input id="btn2" type="button" value="Равны" onclick="messagenumbers()">
+                <input id="btn3" type="button" value="Вторая" onclick="messagenumbers()">
+            </form>
+        </td>
+    </tr>
+</table>
+</div>
+</body>
+</html>
+
+<!--<meta charset="utf-8">-->
+  <!--<title>Событие onclick</title>-->
+  <!--<script>-->
+   <!--function isEmail() {-->
+    <!--var str = document.getElementById("email").value;-->
+    <!--var status = document.getElementById("status");-->
+    <!--var re = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;-->
+    <!--if (re.test(str)) status.innerHTML = "Адрес правильный";-->
+      <!--else status.innerHTML = "Адрес неверный";-->
+    <!--if(isEmpty(str)) status.innerHTML = "Поле пустое";-->
+   <!--}-->
+   <!--function isEmpty(str){-->
+    <!--return (str == null) || (str.length == 0);-->
+   <!--}-->
+  <!--</script>-->
+ <!--</head>-->
+ <!--<body>-->
+  <!--<form action="">-->
+   <!--<p>Введите адрес электронной почты и нажмите кнопку &laquo;Проверить&raquo;</p>-->
+   <!--<p><input type="text" id="email"> <span id="status"></span></p>-->
+   <!--<p><input type="button" value="Проверить" onclick="isEmail()"></p>-->
+  <!--</form>-->
+ <!--</body>-->
+<!--</html>-->
+
